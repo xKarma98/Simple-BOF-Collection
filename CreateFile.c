@@ -21,7 +21,7 @@ HANDLE CreateFileA(
 void go(char* args, int alen) {
 	HANDLE NOTAIOCMAN = KERNEL32$CreateFileA(
 	    // If you try to write this to C:\ you will get code 5 permission denied.
-		"C:\\Users\\username\\onedrive\\desktop\\lol.txt", // file name
+		"C:\\Users\\username\\desktop\\lol.txt", // file name
 		GENERIC_READ, // Desired access.
 		FILE_SHARE_READ, // Share mode.
 		NULL, // sec attributes.
