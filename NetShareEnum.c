@@ -24,7 +24,7 @@ void myfunction() {
 		}
 	}
 	else {
-		BeaconPrintf(CALLBACK_ERROR, "Likely no shares on this host");
+		BeaconPrintf(CALLBACK_ERROR, "Likely no shares on this host error code: %lu", cuh);
 	}
   // Clear out the memory.
 	NETAPI32$NetApiBufferFree(buf);
