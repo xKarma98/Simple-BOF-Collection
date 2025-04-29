@@ -1,6 +1,6 @@
-#include "beacon.h"
-#include <windows.h>
-#include <lm.h>
+#include "beacon.h" // For our beacon apis.
+#include <windows.h> // Windows api include.
+#include <lm.h> // Import's for NetApi like: NET_API_STATUS NERR_Success NetWksta NetApiBuffer.
 
 #pragma comment(lib, "Netapi32.lib") // Solves the linker 2019,1120 issue.
 
@@ -22,8 +22,9 @@ void getloggedonusers() {
 
 	NET_API_STATUS mandobama = NETAPI32$NetWkstaUserEnum(NULL, 1, &buf, MAX_PREFERRED_LENGTH, &entriesread, &totalentries, &resumehandle);
 	if (mandobama == NERR_Success) {
-		WKSTA_USER_INFO_1* exterminate = (WKSTA_USER_INFO_1*)buf;
-		for (DWORD i = 0; i < entriesread; ++i) {
+		WKSTA_USER_INFO_1* exterminate = (WKSTA_USER_INFO_1*)buf; // Pointer to the struct to use allow us to point to the members and call them.
+		for (DWORD i = 0; i < entriesread; ++i) { // Loop through entries.
+			// Begin the conversion.
 			char username[256] = { 0 };
 			char domain[256] = { 0 };
 			char othdomains[256] = { 0 };
