@@ -29,7 +29,7 @@ void getloggedonusers() {
 			char othdomains[256] = { 0 };
 			char logonserver[256] = { 0 };
 
-			// Convert wide strings to ANSI strings safely
+			// Convert wide strings to ANSI strings to print them as strings.
 			// If we don't then it won't work, alternative would be using trustedsec's base.c but this is how I will solve for now.
 			if (exterminate[i].wkui1_username)
 				KERNEL32$WideCharToMultiByte(CP_ACP, 0, exterminate[i].wkui1_username, -1, username, sizeof(username), NULL, NULL);
