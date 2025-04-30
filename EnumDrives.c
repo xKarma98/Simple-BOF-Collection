@@ -20,7 +20,7 @@ void enumdrives() {
 	char* drive = buf; // Char pointer to our buffer.
 	while (*drive) { // While loop.
 		BeaconPrintf(CALLBACK_OUTPUT, "Drives on the computer %s", drive); // Print the drives on the computer as a string.
-		drive += strlen(drive) + 1; // Needed to print ANSI strings and to add new entries.
+		drive += strlen(drive) + 1; // Needed to add new entries.
 	}
 }
 
