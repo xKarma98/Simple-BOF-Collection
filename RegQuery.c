@@ -1,4 +1,4 @@
-// I was statically testing this so I have hardcoded paths this is just a sample from the testing phases.
+// I was statically testing this so I have hardcoded paths this is just a sample from the testing phases, you will have to change variables in here and these appear as strings so more IOC's.
 #include <windows.h>
 #include "Beacon.h"
 
