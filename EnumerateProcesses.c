@@ -10,8 +10,9 @@ typedef void(WINAPI* PPN_WTSCloseServer)(HANDLE);
 typedef void(WINAPI* PPN_WTSFreeMemory)(PVOID);
 
 void exec() {
-	// Load dll's.
+	// Load dll
 	HMODULE hat = LoadLibraryA("Wtsapi32.dll");
+	// GetProcAddresses.
 	FARPROC dat = GetProcAddress(hat, "WTSOpenServerA");
 	FARPROC rat = GetProcAddress(hat, "WTSEnumerateSessionsA");
 	FARPROC das = GetProcAddress(hat, "WTSCloseServer");
@@ -24,7 +25,7 @@ void exec() {
 	PPN_WTSFreeMemory pWTSFreeMemory = (PPN_WTSFreeMemory)GetProcAddress(hat, "WTSFreeMemory");
 
 	// Loading lookupaccountSid.
-	HMODULE ds = LoadLibraryA("Advapi32.dll");
+	HMODULE ds = LoadLibraryA("Advapi32.dll"); // DLL load for LookupAccountSidA.
 	FARPROC mop = GetProcAddress(ds, "LookupAccountSidA");
 	PPN_LookupAccountSidA pLookupAccountSidA = (PPN_LookupAccountSidA)(GetProcAddress(ds, "LookupAccountSidA"));
 
