@@ -2,6 +2,7 @@
 #include <lm.h>
 #include "beacon.h"
 
+// Need's admin permissions and workstation service to be enabled.
 DECLSPEC_IMPORT NET_API_STATUS NETAPI32$NetEnumerateComputerNames(LPCWSTR, NET_COMPUTER_NAME_TYPE, ULONG, PDWORD, LPSTR*);
 
 void go() {
